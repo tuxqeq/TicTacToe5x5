@@ -29,7 +29,6 @@ public class TicTacToeController {
                 if (!mvc.isKeyboardMode()) {
                     int row = mvc.jTable.rowAtPoint(e.getPoint());
                     int col = mvc.jTable.columnAtPoint(e.getPoint());
-
                     makeMove(row, col);
                 }
             }

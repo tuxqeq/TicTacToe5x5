@@ -9,7 +9,7 @@ import java.awt.event.KeyEvent;
 public class TicTacToeMVC extends JPanel {
     public JTable jTable;
     private final TicTacToeData data;
-    private boolean keyboardMode = false;
+    public boolean keyboardMode = false;
 
     public TicTacToeMVC(TicTacToeData data, TicTacToeView view) {
         this.data = data;
@@ -25,6 +25,7 @@ public class TicTacToeMVC extends JPanel {
         jTable.setRowHeight(60);
         jTable.setPreferredSize(new Dimension(300, 300));
         add(jTable);
+        jTable.setFocusable(false);
         jTable.setGridColor(new Color(0, 0, 0, 255));
         setPreferredSize(new Dimension(300, 300));
         setFocusable(true);
@@ -37,6 +38,9 @@ public class TicTacToeMVC extends JPanel {
                     if (keyboardMode) {
                         System.out.println("Keyboard mode activated.");
                     } else {
+                        view.setSelected(-1, -1);
+                        keyboardMode = false;
+                        jTable.repaint();
                         System.out.println("Keyboard mode deactivated.");
                     }
                 }
