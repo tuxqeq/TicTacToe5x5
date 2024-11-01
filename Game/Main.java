@@ -8,8 +8,10 @@ public class Main {
 
         TicTacToeConnector connector = new TicTacToeConnector();
         TicTacToeData data = new TicTacToeData(connector);
-        TicTacToeMVC mvc = new TicTacToeMVC(data);
-        TicTacToeController controller = new TicTacToeController(mvc, connector);
+        TicTacToeView view = new TicTacToeView();
+        TicTacToeMVC mvc = new TicTacToeMVC(data, view);
+
+        TicTacToeController controller = new TicTacToeController(mvc, connector, view);
 
         JFrame frame = new JFrame("5x5 Tic-Tac-Toe");
         frame.add(mvc);
