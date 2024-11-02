@@ -21,7 +21,7 @@ JNIEXPORT jint JNICALL Java_Game_TicTacToeConnector_getCellValue
  * Signature: (III)Z
  */
 JNIEXPORT jboolean JNICALL Java_Game_TicTacToeConnector_makeMove
-  (JNIEnv *, jobject, jint, jint, jint);
+  (JNIEnv *, jobject, jint, jint);
 
 /*
  * Class:     Game_TicTacToeConnector

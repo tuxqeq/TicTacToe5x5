@@ -11,7 +11,6 @@ public class TicTacToeController {
     private final TicTacToeConnector connector;
     private final TicTacToeMVC mvc;
     private TicTacToeView view;
-    private int currentPlayer = 1;
     private int selectedRow = 0;
     private int selectedCol = 0;
 
@@ -25,7 +24,7 @@ public class TicTacToeController {
     private void addListeners() {
         mvc.jTable.addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseClicked(MouseEvent e) {
+            public void mousePressed(MouseEvent e) {
                 if (!mvc.isKeyboardMode()) {
                     int row = mvc.jTable.rowAtPoint(e.getPoint());
                     int col = mvc.jTable.columnAtPoint(e.getPoint());
@@ -63,7 +62,7 @@ public class TicTacToeController {
     }
 
     private void makeMove(int row, int col) {
-        if (connector.makeMove(row, col, currentPlayer)) {
+        if (connector.makeMove(row, col)) {
             mvc.jTable.repaint();
             int winner = connector.checkWin();
             if (winner == 1) {
@@ -75,16 +74,13 @@ public class TicTacToeController {
             } else if (winner == 0) {
                 JOptionPane.showMessageDialog(mvc, "It's a Draw!");
                 resetGame();
-            } else {
-                currentPlayer *= -1;
             }
         }
     }
 
-    private void resetGame() {
+    public void resetGame() {
         connector.resetBoard();
         mvc.jTable.repaint();
-        currentPlayer = 1;
         selectedRow = 0;
         selectedCol = 0;
     }

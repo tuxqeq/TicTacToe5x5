@@ -2,7 +2,8 @@
 #include "Game_TicTacToeConnector.h"
 
 const int SIZE = 5;
-int board[SIZE][SIZE] = {0}; // 0 = empty, 1 = X, -1 = O
+int board[SIZE][SIZE] = {0};// 0 = empty, 1 = X, -1 = O
+static int player = 1;
 
 // Check if there are four in a row horizontally
 static inline int checkRows() {
@@ -89,9 +90,10 @@ JNIEXPORT jint JNICALL Java_Game_TicTacToeConnector_getCellValue(JNIEnv *env, jo
 }
 
 // JNI method to make a move
-JNIEXPORT jboolean JNICALL Java_Game_TicTacToeConnector_makeMove(JNIEnv *env, jobject obj, jint row, jint col, jint player) {
+JNIEXPORT jboolean JNICALL Java_Game_TicTacToeConnector_makeMove(JNIEnv *env, jobject obj, jint row, jint col) {
     if (board[row][col] == 0) { // Ensure cell is empty
         board[row][col] = player;
+        player = -player;
         return JNI_TRUE;
     }
     return JNI_FALSE;
@@ -109,5 +111,6 @@ JNIEXPORT void JNICALL Java_Game_TicTacToeConnector_resetBoard(JNIEnv *env, jobj
             board[i][j] = 0;
         }
     }
+    player = 1;
 }
 

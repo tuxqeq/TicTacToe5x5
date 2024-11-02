@@ -22,12 +22,11 @@ public class TicTacToeMVC extends JPanel {
         jTable.setModel(data);
         jTable.setDefaultRenderer(Integer.class, view);
         jTable.setRowMargin(0);
-        jTable.setRowHeight(60);
-        jTable.setPreferredSize(new Dimension(300, 300));
+        jTable.setRowHeight(120);
         add(jTable);
         jTable.setFocusable(false);
         jTable.setGridColor(new Color(0, 0, 0, 255));
-        setPreferredSize(new Dimension(300, 300));
+        setPreferredSize(new Dimension(600, 600));
         setFocusable(true);
 
         addKeyListener(new KeyAdapter() {
