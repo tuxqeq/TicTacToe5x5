@@ -55,7 +55,7 @@ public class TicTacToeController {
                             break;
                     }
                     view.setSelected(selectedRow, selectedCol);
-                    mvc.jTable.repaint(); // Update view with the new selection
+                    mvc.jTable.repaint();
                 }
             }
         });
