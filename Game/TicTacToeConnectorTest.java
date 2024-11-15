@@ -153,7 +153,7 @@ class TicTacToeConnectorTest {
 
     // Anti-diagonal wins for Player 1 (top-right to bottom-left)
     @Test
-    public void testAntiDiagonal1WinPlayer1() { //rewrite no winner
+    public void testAntiDiagonal1WinPlayer1() {
         connector.makeMove(0, 4); // Player 1
         connector.makeMove(1, 1); // Player 2
         connector.makeMove(1, 3); // Player 1
@@ -165,7 +165,7 @@ class TicTacToeConnectorTest {
     }
 
     @Test
-    public void testAntiDiagonal2WinPlayer1() { //rewrite no winner
+    public void testAntiDiagonal2WinPlayer1() {
         connector.makeMove(0, 3); // Player 1
         connector.makeMove(0, 4); // Player 2
         connector.makeMove(1, 2); // Player 1
@@ -176,7 +176,7 @@ class TicTacToeConnectorTest {
         assertEquals(1, connector.checkWin(), "Player 1 should win anti-diagonally from top-right to bottom-left.");
     }
     @Test
-    public void testAntiDiagonal3WinPlayer1() { //rewrite no winner
+    public void testAntiDiagonal3WinPlayer1() {
         connector.makeMove(1, 4); // Player 1
         connector.makeMove(0, 4); // Player 2
         connector.makeMove(2, 3); // Player 1
@@ -189,7 +189,7 @@ class TicTacToeConnectorTest {
 
     // Anti-diagonal wins for Player 2 (top-right to bottom-left)
     @Test
-    public void testAntiDiagonal1WinPlayer2() { //rewrite no winner
+    public void testAntiDiagonal1WinPlayer2() {
         connector.makeMove(4, 4); // Player 1
         connector.makeMove(0, 4); // Player 2
         connector.makeMove(3, 4); // Player 1
