@@ -22,11 +22,11 @@ public class TicTacToeData extends AbstractTableModel {
 
     @Override
     public int getRowCount() {
-        return 5; // 5x5 grid
+        return 5;
     }
 
     @Override
     public int getColumnCount() {
-        return 5; // 5x5 grid
+        return 5;
     }
 }
