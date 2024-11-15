@@ -56,7 +56,7 @@ class TicTacToeConnectorTest {
     public void testVerticalWinPlayer1() {
         for (int row = 0; row < 4; row++) {
             connector.makeMove(row, 0); // Player 1
-            connector.makeMove(row, 1); // Player 2 (blocking)
+            connector.makeMove(row, 1); // Player 2
         }
         connector.makeMove(4, 0); // Player 1 should win with four in a row
         assertEquals(1, connector.checkWin(), "Player 1 should win vertically in column 0.");
